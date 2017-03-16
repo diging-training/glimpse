@@ -50,6 +50,9 @@
       <div class="page-header">
       <nav>
           <ul class="nav nav-pills pull-right">
+          <li role="presentation"  ${currentPage == "Upload" ? "class=\"active\"" : ""}>
+          		<a href="<c:url value="/upload" />">Upload</a>
+          	</li>
           <li role="presentation"  ${currentPage == "home" ? "class=\"active\"" : ""}>
           		<a href="<c:url value="/" />">Home</a>
           	</li>
