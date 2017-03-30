@@ -13,28 +13,28 @@ import edu.asu.diging.glimpse.service.FileService;
 
 @Controller
 public class UploadController {
-	
-        @Autowired
-        private FileService fileService;
-	
-		@RequestMapping(value="/upload")
-		public String Upload(){
-			return "Upload";
-		}
-		
-		 @RequestMapping(value = "/upload", method = RequestMethod.POST)
-		    public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile){
-		        long fileSize = multipartFile.getSize();
-		        String fileName = multipartFile.getOriginalFilename();
-		        ModelAndView modelAndView = new ModelAndView("Upload");
-		        if(fileService.saveFile(multipartFile)){
-		            Map<String, Object> modelMap = new HashMap<>();
-		            modelMap.put("fileName", fileName);
-		            modelMap.put("fileSize", fileSize);
-		            modelAndView.addAllObjects(modelMap);
-		            return modelAndView;
-		        }
-		        return new ModelAndView("upload-failed");
-		    }
-		 
+
+    @Autowired
+    private FileService fileService;
+
+    @RequestMapping(value = "/upload")
+    public String Upload() {
+        return "Upload";
+    }
+
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile) {
+        long fileSize = multipartFile.getSize();
+        String fileName = multipartFile.getOriginalFilename();
+        ModelAndView modelAndView = new ModelAndView("Upload");
+        if (fileService.saveFile(multipartFile)) {
+            Map<String, Object> modelMap = new HashMap<>();
+            modelMap.put("fileName", fileName);
+            modelMap.put("fileSize", fileSize);
+            modelAndView.addAllObjects(modelMap);
+            return modelAndView;
+        }
+        return new ModelAndView("upload-failed");
+    }
+
 }

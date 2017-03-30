@@ -12,35 +12,35 @@ import edu.asu.diging.glimpse.web.UploadController;
 
 import java.io.File;
 import java.io.IOException;
- 
+
 @Configuration
 @PropertySource("classpath:config.properties")
 @Service("fileService")
 public class FileService implements FileInterface {
- 
-    //public static final String SAVE_LOCATION = "C:/SpringUpload/";
+
     @Value("${file_location}")
     private String location;
-    
+
     private static final Logger logger = LoggerFactory.getLogger(UploadController.class);
-    public boolean saveFile(MultipartFile multipartFile){
+
+    public boolean saveFile(MultipartFile multipartFile) {
         boolean result = false;
-        //set the saved location and create a directory location
-        String fileName  = multipartFile.getOriginalFilename();
+        // set the saved location and create a directory location
+        String fileName = multipartFile.getOriginalFilename();
         File pathFile = new File(location);
-        //check if directory exist, if not, create directory
-        if(!pathFile.exists()){
+        // check if directory exist, if not, create directory
+        if (!pathFile.exists()) {
             pathFile.mkdir();
         }
- 
-        //create the actual file
+
+        // create the actual file
         pathFile = new File(location + fileName);
-        //save the actual file
+        // save the actual file
         try {
             multipartFile.transferTo(pathFile);
             result = true;
         } catch (IOException e) {
-            logger.error("Unable to upload"," ", e);
+            logger.error("Unable to upload", " ", e);
         }
         return result;
     }

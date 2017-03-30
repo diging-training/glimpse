@@ -13,14 +13,14 @@
 		<put-attribute name="pageName" value="" />
 		<put-attribute name="currentPage" value="home" />
 	</definition>
-	
+
 	<definition name="home" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/views/home.jsp" />	
+		<put-attribute name="content" value="/WEB-INF/views/home.jsp" />
 	</definition>
-    
-    <definition name="Upload" extends="base.definition">
-       <put-attribute name="title" value="Upload Files" />
-       <put-attribute name="content" value="/WEB-INF/views/Upload.jsp" />
-    </definition>
-	
+
+	<definition name="Upload" extends="base.definition">
+		<put-attribute name="title" value="Upload Files" />
+		<put-attribute name="content" value="/WEB-INF/views/Upload.jsp" />
+	</definition>
+
 </tiles-definitions>
