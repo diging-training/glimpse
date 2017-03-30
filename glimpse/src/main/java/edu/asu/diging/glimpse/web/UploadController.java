@@ -3,6 +3,7 @@ package edu.asu.diging.glimpse.web;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,12 +25,12 @@ public class UploadController {
     	private FileService fileService;
 	
 		@RequestMapping(value="/upload")
-		public String UploadCon(){
+		public String UploadFile(){
 			return "Upload";
 		}
 		
 		 @RequestMapping(value = "/upload", method = RequestMethod.POST)
-		    public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile){
+		    public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile) throws IOException{
 		        long fileSize = multipartFile.getSize();
 		        String fileName = multipartFile.getOriginalFilename();
 		        ModelAndView modelAndView = new ModelAndView("Upload");

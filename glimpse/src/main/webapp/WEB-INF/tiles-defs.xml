@@ -20,7 +20,7 @@
 	
 	<definition name="Upload" extends="base.definition">
     <put-attribute name="title" value="Upload Files" />
-    <put-attribute name="content" value="/WEB-INF/views/Upload.jsp" />
+    <put-attribute name="content" value="/WEB-INF/views/upload.jsp" />
     </definition>
 	
 </tiles-definitions>
