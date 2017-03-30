@@ -32,7 +32,7 @@ public class UploadController {
 		    public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile){
 		        long fileSize = multipartFile.getSize();
 		        String fileName = multipartFile.getOriginalFilename();
-		        ModelAndView modelAndView = new ModelAndView("upload-success");
+		        ModelAndView modelAndView = new ModelAndView("Upload");
 		        if(fileService.saveFile(multipartFile)){
 		            Map<String, Object> modelMap = new HashMap<>();
 		            modelMap.put("fileName", fileName);

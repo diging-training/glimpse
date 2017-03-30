@@ -31,7 +31,5 @@
 				<beans:value>/WEB-INF/tiles-defs.xml</beans:value>
 			</beans:list>
 		</beans:property>
-	</beans:bean>
-
-	
+	</beans:bean>	
 </beans:beans>
