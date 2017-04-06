@@ -42,7 +42,7 @@ public class SecurityContext extends WebSecurityConfigurerAdapter {
                         "/logout").permitAll()
                 // The rest of the our application is protected.
                 .antMatchers("/users/**", "/admin/**").hasRole("ADMIN")
-                .anyRequest().hasRole("USER");
+                .anyRequest().hasRole("ADMIN");
     }
 
     @Bean

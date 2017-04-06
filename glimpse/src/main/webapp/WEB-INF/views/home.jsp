@@ -12,10 +12,7 @@ You did it. This basic webapp is all set up now. Try to login as "admin" with pa
 </sec:authorize>
 <sec:authorize access="isAuthenticated()">
 <h1>Whoohoo!</h1>
-<p>You are logged in.</p>
+<p>You are logged in. Upload a file </p>
 </sec:authorize>
 </div>
 
-<p>
-The quick, <a href="">brown fox jumps</a> over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. 
-</p>
