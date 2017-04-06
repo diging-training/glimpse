@@ -18,15 +18,15 @@ public class UploadController {
     private FileService fileService;
 
     @RequestMapping(value = "/upload")
-    public String Upload() {
-        return "Upload";
+    public String upload() {
+        return "upload";
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public ModelAndView uploadFile(@RequestParam("file") MultipartFile multipartFile) {
         long fileSize = multipartFile.getSize();
         String fileName = multipartFile.getOriginalFilename();
-        ModelAndView modelAndView = new ModelAndView("Upload");
+        ModelAndView modelAndView = new ModelAndView("upload");
         if (fileService.saveFile(multipartFile)) {
             Map<String, Object> modelMap = new HashMap<>();
             modelMap.put("fileName", fileName);

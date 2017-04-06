@@ -16,12 +16,12 @@ import java.io.IOException;
 @Configuration
 @PropertySource("classpath:config.properties")
 @Service("fileService")
-public class FileService implements FileInterface {
+public class FileService implements IFileService {
 
     @Value("${file_location}")
     private String location;
 
-    private static final Logger logger = LoggerFactory.getLogger(UploadController.class);
+    private final Logger logger = LoggerFactory.getLogger(UploadController.class);
 
     public boolean saveFile(MultipartFile multipartFile) {
         boolean result = false;
